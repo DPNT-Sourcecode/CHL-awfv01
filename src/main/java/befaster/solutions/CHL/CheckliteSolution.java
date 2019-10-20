@@ -23,14 +23,16 @@ public class CheckliteSolution {
         int result = -1;
         if (validateInput(skus)) {
             result = 0;
-            Arrays.sort(skus.toCharArray());
+            char[] temp = skus.toCharArray();
+            Arrays.sort(temp);
+            String input = new String(temp);
             for (String key : mapSpecial.keySet()) {
-                while (skus.contains(key)) {
+                while (input.contains(key)) {
                     result += mapSpecial.get(key);
-                    skus = skus.replaceFirst(key, "");
+                    input = input.replaceFirst(key, "");
                 }
             }
-            for (Character c : skus.toCharArray()) {
+            for (Character c : input.toCharArray()) {
                 result += mapRegular.get(c.toString());
             }
 
@@ -46,6 +48,7 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
 
