@@ -47,6 +47,7 @@ public class CheckliteSolution {
                 String temporary = new String(input);
                 while (temporary.contains(key) && temporary.contains(mapBonus.get(key))) {
                     temporary = temporary.replaceFirst(key, "");
+                    temporary = temporary.replaceFirst(mapBonus.get(key), "");
                     result = result - mapRegular.get(mapBonus.get(key));
                 }
             }
@@ -66,4 +67,5 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
