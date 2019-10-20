@@ -1,13 +1,11 @@
 package befaster.solutions.CHL;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class CheckliteSolution {
 
     private static Map<String, Integer> mapRegular = new HashMap<>();
-    private static Map<String, String> mapSpecial = new HashMap<>();
+    private static List<Map<String, String>> listSpecial = new ArrayList<>();
     private static Map<String, String> mapBonus = new HashMap<>();
 
     static {
@@ -20,9 +18,15 @@ public class CheckliteSolution {
         mapRegular.put("Y", 130);
         mapRegular.put("Z", 45);
 
-        mapSpecial.put("AAAAA", "X");
-        mapSpecial.put("AAA", "Y");
-        mapSpecial.put("BB", "Z");
+        Map<String, String> fiveA = new HashMap<>();
+        fiveA.put("AAAAA", "X");
+        listSpecial.add(fiveA);
+        Map<String, String> threeA = new HashMap<>();
+        threeA.put("AAA", "Y");
+        listSpecial.add(threeA);
+        Map<String, String> doubleB = new HashMap<>();
+        doubleB.put("BB", "Z");
+        listSpecial.add(doubleB);
 
         mapBonus.put("EE", "EEB");
     }
@@ -34,8 +38,10 @@ public class CheckliteSolution {
             char[] temp = skus.toCharArray();
             Arrays.sort(temp);
             String input = new String(temp);
-            for (String key : mapSpecial.keySet()) {
-                input = input.replaceAll(key, mapSpecial.get(key));
+            for (Map<String, String> special : listSpecial) {
+                for (String key : special.keySet()) {
+                    input = input.replaceAll(key, special.get(key));
+                }
             }
             for (String key: mapBonus.keySet()) {
                 input = input.replaceAll(key, mapBonus.get(key));
@@ -59,5 +65,6 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
