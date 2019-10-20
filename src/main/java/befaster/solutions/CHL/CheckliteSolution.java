@@ -30,7 +30,7 @@ public class CheckliteSolution {
         listSpecial.add(doubleB);
 
         mapBonus.put("EE", "B");
-        mapBonus.put("FF", "F");
+        mapBonus.put("FFF", "F");
     }
 
     public Integer checklite(String skus) {
@@ -70,6 +70,7 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
 
