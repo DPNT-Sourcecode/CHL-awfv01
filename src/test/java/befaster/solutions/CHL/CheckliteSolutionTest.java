@@ -22,6 +22,7 @@ public class CheckliteSolutionTest {
     @Test
     public void testChecklite() {
         CheckliteSolution solution = new CheckliteSolution();
+        Assert.assertTrue(solution.checklite("FFF") == 20);
         Assert.assertTrue(solution.checklite("EE") == 80);
         Assert.assertTrue(solution.checklite("EEB") == 80);
         Assert.assertTrue(solution.checklite("EEEB") == 120);
@@ -30,4 +31,5 @@ public class CheckliteSolutionTest {
         Assert.assertTrue(solution.checklite("ABCDEABCDE") == 280);
     }
 }
+
 

@@ -14,6 +14,7 @@ public class CheckliteSolution {
         mapRegular.put("C", 20);
         mapRegular.put("D", 15);
         mapRegular.put("E", 40);
+        mapRegular.put("F", 10);
         mapRegular.put("X", 200);
         mapRegular.put("Y", 130);
         mapRegular.put("Z", 45);
@@ -29,6 +30,7 @@ public class CheckliteSolution {
         listSpecial.add(doubleB);
 
         mapBonus.put("EE", "B");
+        mapBonus.put("FF", "F");
     }
 
     public Integer checklite(String skus) {
@@ -68,6 +70,7 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
 
