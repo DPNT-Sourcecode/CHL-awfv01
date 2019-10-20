@@ -40,8 +40,10 @@ public class CheckliteSolution {
             for (String key: mapBonus.keySet()) {
                 input = input.replaceAll(key, mapBonus.get(key));
             }
-
-            for (Character c : input.toCharArray()) {
+            temp = input.toCharArray();
+            Arrays.sort(temp);
+            String finalCount = new String(temp);
+            for (Character c : finalCount.toCharArray()) {
                 result += mapRegular.get(c.toString());
             }
 
@@ -57,4 +59,5 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
