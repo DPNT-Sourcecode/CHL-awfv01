@@ -7,16 +7,24 @@ import java.util.Map;
 public class CheckliteSolution {
 
     private static Map<String, Integer> mapRegular = new HashMap<>();
-    private static Map<String, Integer> mapSpecial = new HashMap<>();
+    private static Map<String, String> mapSpecial = new HashMap<>();
+    private static Map<String, String> mapBonus = new HashMap<>();
 
     static {
         mapRegular.put("A", 50);
         mapRegular.put("B", 30);
         mapRegular.put("C", 20);
         mapRegular.put("D", 15);
+        mapRegular.put("E", 40);
+        mapRegular.put("X", 200);
+        mapRegular.put("Y", 130);
+        mapRegular.put("Z", 45);
 
-        mapSpecial.put("AAA", 130);
-        mapSpecial.put("BB", 45);
+        mapSpecial.put("AAAAA", "X");
+        mapSpecial.put("AAA", "Y");
+        mapSpecial.put("BB", "Z");
+
+        mapBonus.put("EE", "EEB");
     }
 
     public Integer checklite(String skus) {
@@ -27,11 +35,12 @@ public class CheckliteSolution {
             Arrays.sort(temp);
             String input = new String(temp);
             for (String key : mapSpecial.keySet()) {
-                while (input.contains(key)) {
-                    result += mapSpecial.get(key);
-                    input = input.replaceFirst(key, "");
-                }
+                input = input.replaceAll(key, mapSpecial.get(key));
             }
+            for (String key: mapBonus.keySet()) {
+                input = input.replaceAll(key, mapBonus.get(key));
+            }
+
             for (Character c : input.toCharArray()) {
                 result += mapRegular.get(c.toString());
             }
@@ -48,3 +57,4 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
