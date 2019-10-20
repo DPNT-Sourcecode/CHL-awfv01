@@ -36,6 +36,3 @@ public class CheckliteSolutionTest {
         Assert.assertTrue(solution.checklite("ABCDEABCDE") == 280);
     }
 }
-
-
-

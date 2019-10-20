@@ -47,6 +47,8 @@ public class CheckliteSolution {
                         temporary = temporary.replaceFirst(key, "");
                         temporary = temporary.replaceFirst(mapBonus.get(key), "");
                         input = input.replaceFirst(mapBonus.get(key), "");
+                    } else {
+                        break;
                     }
                 }
             }
@@ -72,11 +74,3 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
-
-
-
-
-
-
-
-
