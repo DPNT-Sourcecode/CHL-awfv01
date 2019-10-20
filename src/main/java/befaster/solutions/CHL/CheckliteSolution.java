@@ -40,10 +40,10 @@ public class CheckliteSolution {
             String input = new String(temp);
             for (String key: mapBonus.keySet()) {
                 String temporary = new String(input);
-                while (temporary.contains(key) && temporary.contains(mapBonus.get(key))) {
+                while (temporary.contains(key) && input.contains(mapBonus.get(key))) {
                     temporary = temporary.replaceFirst(key, "");
                     temporary = temporary.replaceFirst(mapBonus.get(key), "");
-                    result = result - mapRegular.get(mapBonus.get(key));
+                    input.replaceFirst(mapBonus.get(key), "");
                 }
             }
             for (Map<String, String> special : listSpecial) {
@@ -56,7 +56,7 @@ public class CheckliteSolution {
             }
 
         }
-        System.out.println("result = " + result);
+        System.out.println(String.format("[%s] -> %s", skus, result));
         return result;
     }
 
@@ -68,6 +68,7 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
 
