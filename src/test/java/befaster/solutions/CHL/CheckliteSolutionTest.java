@@ -8,7 +8,8 @@ public class CheckliteSolutionTest {
     @Test
     public void testChecklite() {
         CheckliteSolution solution = new CheckliteSolution();
-        Assert.assertEquals(260, solution.checklite("AAAAAA"));
+        Assert.assertTrue(solution.checklite("AAAAAA") == 260);
     }
 }
+
 
