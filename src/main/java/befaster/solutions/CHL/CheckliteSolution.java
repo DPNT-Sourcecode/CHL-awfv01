@@ -33,11 +33,12 @@ public class CheckliteSolution {
     private boolean validateInput(String skus) {
         String input = new String(skus).trim();
         for (String key : mapRegular.keySet()) {
-            input.replaceAll(key, "");
+            input = input.replaceAll(key, "");
         }
         return input.length() != 0;
     }
 }
+
 
 
 
