@@ -24,7 +24,7 @@ public class CheckliteSolution {
         if (validateInput(skus)) {
             int result = 0;
             for (Character c : skus.toCharArray()) {
-                result += mapRegular.get(c);
+                result += mapRegular.get(c.toString());
             }
         }
         return -1;
@@ -38,5 +38,6 @@ public class CheckliteSolution {
         return input.length() != 0;
     }
 }
+
 
 
