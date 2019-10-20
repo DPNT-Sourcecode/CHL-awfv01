@@ -19,13 +19,15 @@ public class CheckliteSolution {
     }
 
     public Integer checklite(String skus) {
+        int result = -1;
         if (validateInput(skus)) {
-            int result = 0;
+            result = 0;
             for (Character c : skus.toCharArray()) {
                 result += mapRegular.get(c.toString());
             }
+
         }
-        return -1;
+        return result;
     }
 
     private boolean validateInput(String skus) {
@@ -36,3 +38,4 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
