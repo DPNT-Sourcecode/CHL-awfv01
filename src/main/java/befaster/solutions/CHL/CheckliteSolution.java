@@ -120,15 +120,13 @@ public class CheckliteSolution {
 
     private boolean validateInput(String skus) {
         for (char c : skus.toCharArray()) {
-            if (c )
+            if (c < 'A' || c > 'Z') {
+                return false;
+            }
         }
         return true;
-        String input = new String(skus).trim();
-        for (String key : mapRegular.keySet()) {
-            input = input.replaceAll(key, "");
-        }
-        return input.length() == 0;
     }
 }
+
 
 
