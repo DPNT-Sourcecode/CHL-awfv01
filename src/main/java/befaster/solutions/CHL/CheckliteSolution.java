@@ -35,9 +35,10 @@ public class CheckliteSolution {
         for (String key : mapRegular.keySet()) {
             input = input.replaceAll(key, "");
         }
-        return input.length() != 0;
+        return input.length() == 0;
     }
 }
+
 
 
 
