@@ -1,5 +1,6 @@
 package befaster.solutions.CHL;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,14 +15,21 @@ public class CheckliteSolution {
         mapRegular.put("C", 20);
         mapRegular.put("D", 15);
 
-        mapSpecial.put("3A", 130);
-        mapSpecial.put("2B", 45);
+        mapSpecial.put("AAA", 130);
+        mapSpecial.put("BB", 45);
     }
 
     public Integer checklite(String skus) {
         int result = -1;
         if (validateInput(skus)) {
             result = 0;
+            Arrays.sort(skus.toCharArray());
+            for (String key : mapSpecial.keySet()) {
+                while (skus.contains(key)) {
+                    result += mapSpecial.get(key);
+                    skus = skus.replace(key, "");
+                }
+            }
             for (Character c : skus.toCharArray()) {
                 result += mapRegular.get(c.toString());
             }
@@ -38,4 +46,5 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
