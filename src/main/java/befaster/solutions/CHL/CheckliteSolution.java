@@ -43,7 +43,7 @@ public class CheckliteSolution {
                 while (temporary.contains(key) && input.contains(mapBonus.get(key))) {
                     temporary = temporary.replaceFirst(key, "");
                     temporary = temporary.replaceFirst(mapBonus.get(key), "");
-                    input.replaceFirst(mapBonus.get(key), "");
+                    input = input.replaceFirst(mapBonus.get(key), "");
                 }
             }
             for (Map<String, String> special : listSpecial) {
@@ -68,6 +68,7 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
 
