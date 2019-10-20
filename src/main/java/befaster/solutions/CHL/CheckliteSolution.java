@@ -127,6 +127,3 @@ public class CheckliteSolution {
         return true;
     }
 }
-
-
-
