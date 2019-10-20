@@ -27,7 +27,7 @@ public class CheckliteSolution {
             for (String key : mapSpecial.keySet()) {
                 while (skus.contains(key)) {
                     result += mapSpecial.get(key);
-                    skus = skus.replace(key, "");
+                    skus = skus.replaceFirst(key, "");
                 }
             }
             for (Character c : skus.toCharArray()) {
@@ -46,5 +46,6 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
