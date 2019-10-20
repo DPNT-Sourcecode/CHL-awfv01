@@ -28,7 +28,7 @@ public class CheckliteSolution {
         doubleB.put("BB", "Z");
         listSpecial.add(doubleB);
 
-        mapBonus.put("EE", "EEB");
+        mapBonus.put("EE", "B");
     }
 
     public Integer checklite(String skus) {
@@ -43,12 +43,14 @@ public class CheckliteSolution {
                     input = input.replaceAll(key, special.get(key));
                 }
             }
-            /*for (String key: mapBonus.keySet()) {
-                input = input.replaceAll(key, mapBonus.get(key));
+            for (String key: mapBonus.keySet()) {
+                while (input.contains(key)) {
+                    input = input.replaceFirst(mapBonus.get(key), "");
+                }
             }
             temp = input.toCharArray();
             Arrays.sort(temp);
-            String finalCount = new String(temp);*/
+            String finalCount = new String(temp);
             for (Character c : input.toCharArray()) {
                 result += mapRegular.get(c.toString());
             }
@@ -65,6 +67,7 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
 
 

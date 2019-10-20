@@ -19,7 +19,10 @@ public class CheckliteSolutionTest {
     public void testChecklite() {
         CheckliteSolution solution = new CheckliteSolution();
         Assert.assertTrue(solution.checklite("EE") == 80);
+        Assert.assertTrue(solution.checklite("EEB") == 80);
+        Assert.assertTrue(solution.checklite("EEEB") == 120);
     }
 }
+
 
 
