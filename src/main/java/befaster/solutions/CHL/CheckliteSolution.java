@@ -119,6 +119,10 @@ public class CheckliteSolution {
     }
 
     private boolean validateInput(String skus) {
+        for (char c : skus.toCharArray()) {
+            if (c )
+        }
+        return true;
         String input = new String(skus).trim();
         for (String key : mapRegular.keySet()) {
             input = input.replaceAll(key, "");
@@ -126,4 +130,5 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
+
 
