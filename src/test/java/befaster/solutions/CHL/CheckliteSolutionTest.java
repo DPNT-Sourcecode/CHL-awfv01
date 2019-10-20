@@ -23,6 +23,3 @@ public class CheckliteSolutionTest {
         Assert.assertTrue(solution.checklite("EEEB") == 120);
     }
 }
-
-
-

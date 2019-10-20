@@ -67,8 +67,3 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
-
-
-
-
-
