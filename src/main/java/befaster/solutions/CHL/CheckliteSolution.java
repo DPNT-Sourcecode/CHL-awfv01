@@ -1,7 +1,5 @@
 package befaster.solutions.CHL;
 
-import befaster.runner.SolutionNotImplementedException;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,8 +36,3 @@ public class CheckliteSolution {
         return input.length() == 0;
     }
 }
-
-
-
-
-
